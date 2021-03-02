@@ -10,6 +10,12 @@
   </head>
 
   <body>
+  <header class="header">
+      <div class="header_name">
+        <h1 class="aaa"><a>映画記録</a></h1>
+        <%= link_to "投稿", new_post_path, class: "post" %>
+      </div>
+  </header>
     <%= yield %>
   </body>
 </html>
