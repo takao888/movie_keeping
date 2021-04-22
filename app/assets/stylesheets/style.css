@@ -178,7 +178,6 @@ form input, form textarea {
   background-size: contain;
   background-position: center center;
   border-radius: 3px;
-  box-shadow: 0 0 10px rgb(41 41 41 / 20%);
 }
 .showsai{
   display: flex;
