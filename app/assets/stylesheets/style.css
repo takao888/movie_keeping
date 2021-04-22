@@ -1,3 +1,11 @@
+
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  color: #666;
+  text-decoration: none;
+  padding: 5px;
+  margin: 5px;
+  }
+  
 body{
   background-color: #f5f5f3;
   padding-top: 60px;
@@ -18,39 +26,223 @@ body{
   left: 0;
   right: 0;
   z-index: 5;
-  height: 62px;
+  height: 60px;
 }
 
 .header_name{
   width: 100%;
+  height: 71.5px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 0;
+  margin-top: -5px;
   margin-bottom: 0;
-  max-width: 660px;
+  max-width: 800px;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+  padding-left: 150px;
 }
 
+.lll{
+  margin-left: 50px;
+}
+
+
 .aaa{
-  font-size: 23px;
+  font-size: 25px;
   line-height: normal;
   text-decoration: none;
   color: #666;
+  width: 130px;
 }
 
-.post{
-  font-size: 20px;
-  line-height: 42px;
+.aaa h1{
   text-decoration: none;
-  padding: 10px 20px;
+}
+
+.res{
   font-size: 20px;
   border: 2px solid #666;
-  color: #666;
   font-weight: bold;
   text-align: center;
   border-radius: 3px;
   display: inline-block;
   width: 120px;
-  height: 40px;
+  height: 35px;
+}
+
+.new{
+  margin: 20px 0px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgb(41 41 41 / 20%);
+  background-color: white;
+  box-sizing: border-box;
+}
+
+.new h3{
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #666;
+}
+
+.form input, form textarea{
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+div.bbb div.content_post{
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  height: 200px;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgb(41 41 41 / 20%);
+}
+
+div.bbb div.content_post::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  zoom: 1;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorstr='#FF000000', endColorstr='#FFA60000');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjYyJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC44NSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(62%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.85)));
+  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 62%, rgba(0, 0, 0, 0.85) 100%);
+  z-index: 1;
+  border-radius: 3px;
+}
+
+div.bbb div.content_post p {
+  position: absolute;
+  left: 25px;
+  right: 100px;
+  bottom: 0px;
+  font-size: 20px;
+  z-index: 2;
+  font-weight: bold;
+}
+
+.bbb{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding-top: 10px;
+}
+ul.user_info{
+  font-size: 0px;
+  padding-top: 15px;
+}
+.container {
+  margin: 20px 0;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+}
+.container h3 {
+  margin: 0 0 20px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 20px;
+  color: #666;
+}
+form input, form textarea {
+  width: 100%;
+  margin: 5px 0 15px;
+  padding: 10px;
+  border: 1px solid #D8D8D8;
+  border-radius: 5px;
+  font-family: "游ゴシック", "YuGothic";
+}
+
+.post-image {
+  margin-top: 20px;
+  padding: 30px;
+  position: relative;
+  height: 500px;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgb(41 41 41 / 20%);
+}
+.showsai{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+ul{
+  list-style: none;
+}
+li, #post_comment.com{
+  width: 500px;
+  height: 80px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.showsai ul li span{
+  border-bottom: 2px solid;
+}
+
+div .aaa{
+  width: 40%;
+}
+
+.logout{
+font-size: 15px;
+}
+
+.only_user{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+}
+
+a.edi{
+  margin-right: 50px;
+}
+
+a.dele{
+  margin-left: 50px;
+}
+
+#post_comment.com, .com{
+  margin-left: 5px;
+}
+
+.comments{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.comments p{
+  margin-top: 0px;
+}
+
+.all{
+  width: 100vw;
+  height: 100vh;
+  margin-left: -8px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-image: url(https://cdn.pixabay.com/photo/2020/02/27/18/54/popcorn-4885565_1280.jpg);
 }

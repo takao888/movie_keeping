@@ -12,8 +12,17 @@
   <body>
   <header class="header">
       <div class="header_name">
-        <h1 class="aaa"><a>映画記録</a></h1>
-        <%= link_to "投稿", new_post_path, class: "post" %>
+        <h1 class="aaa"><a href="/">映画記録</a></h1>
+          <div class="lll">
+          <% if user_signed_in? %>
+            <%= link_to "記録", new_post_path, class: "res" %>
+            <%= link_to current_user.name, "#" %>
+            <%= link_to "ログアウト", destroy_user_session_path, class: "logout", method: :delete %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: "res" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "res" %>
+          <% end %>
+          </div>
       </div>
   </header>
     <%= yield %>
