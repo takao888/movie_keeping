@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>MovieKeeping</title>
+    <title>MovieSharing</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,21 @@
   </head>
 
   <body>
+  <header class="header">
+      <div class="header_name">
+        <h1 class="aaa"><a href="/">Movie Sharing</a></h1>
+          <div class="lll">
+          <% if user_signed_in? %>
+            <%= link_to "Shareする", new_post_path, class: "res" %>
+            <%= link_to current_user.name, "#" %>
+            <%= link_to "ログアウト", destroy_user_session_path, class: "logout", method: :delete %>
+          <% else %>
+            <%= link_to "ログイン", new_user_session_path, class: "res" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "res" %>
+          <% end %>
+          </div>
+      </div>
+  </header>
     <%= yield %>
   </body>
 </html>

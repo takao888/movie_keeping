@@ -1,0 +1,43 @@
+<div class="post-show">
+    <div class="post-image" style="background-image: url(<%= @post.image %>);" >
+    </div>
+    <div class="showsai">
+      <ul>
+        <li><span>投稿者</span>
+        <p><%= @post.user.name %></p></li>
+        <li><span>タイトル<span>
+          <p><%= @post.title %></p></li>
+        <li><span>監督</span>
+          <p><%= @post.supervision %></p></li>
+        <li><span>制作国</span>
+          <p><%= @post.country %></p></li>
+        <li><span>感想</span>
+          <p><%= @post.content %></p></li>
+      </ul>
+    </div>
+
+      <div class="only_user">
+        <% if user_signed_in? && current_user.id == @post.user_id %>
+        <%# ログインしているかつ今ログインしているユーザーが投稿者だった場合 %>
+          <%= link_to "編集", edit_post_path, class:"edi", method: :get %>
+          <%= link_to "削除", post_path, class:"dele", method: :delete %>
+        <% end %>
+        <% unless current_user.id == @post.user_id %>
+        <%# それ以外のログインしているユーザー %>
+          <%= form_with(model: [@post, @comment], local: true) do |f| %>
+            <%= f.text_field :comment, placeholder: "作品に対してコメント", class:"com" %>
+            <%= f.submit "保存", class:"com" %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="comments">
+        <h4>コメント一覧</h4>
+          <div class="comment">
+          <% @comments.each do |comment| %>
+            <p><%= link_to @post.user.name, "/users/#{comment.user.id}" %>: <%= comment.comment %>
+            </p>
+          <% end %>
+          </div>
+      </div>
+</div>
