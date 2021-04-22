@@ -33,9 +33,11 @@
 
       <div class="comments">
         <h4>コメント一覧</h4>
+          <div class="comment">
           <% @comments.each do |comment| %>
             <p><%= link_to @post.user.name, "/users/#{comment.user.id}" %>: <%= comment.comment %>
             </p>
           <% end %>
+          </div>
       </div>
 </div>
