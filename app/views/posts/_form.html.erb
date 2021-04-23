@@ -1,8 +1,9 @@
-<%= form_with(model: post, local: true) do |f| %>
-  <%= f.text_field :title, placeholder: "タイトル" %>
-  <%= f.text_field :supervision, placeholder: "監督" %>
-  <%= f.text_field :country, placeholder: "制作国" %>
-  <%= f.text_area :content, placeholder: "感想" %>
-  <%= f.file_field :image, placeholder: "写真" %>
-  <%= f.submit "保存" %>
-<% end %>
+  <%= form_with(model: post, local: true) do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <%= f.text_field :title, placeholder: "タイトル" %>
+    <%= f.text_field :supervision, placeholder: "監督" %>
+    <%= f.text_field :country, placeholder: "制作国" %>
+    <%= f.text_area :content, placeholder: "感想" %>
+    <%= f.file_field :image, placeholder: "写真" %>
+    <%= f.submit "保存" %>
+  <% end %>
