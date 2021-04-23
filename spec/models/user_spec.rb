@@ -1,8 +1,8 @@
 require 'rails_helper'
-describe User do
+RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
-end
+  end
 
   describe 'ユーザー新規登録' do
     context '上手くいく場合' do
@@ -24,40 +24,49 @@ end
     end
 
     context '上手くいかない場合' do
-      it 'nameが空では登録できない' do
-        @user.name
+      it 'nameが空の時' do
+        @user.name = ""
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Name can't be blank")
       end
 
-      it 'emailが空では登録できない' do
+      it 'emailが空の時' do
+        @user.email = ""
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Email can't be blank")
       end
 
-      it "passwordが空では登録できない" do
-      end
-
-      it "passwordとpassword_confirmationが空の時" do
+      it "passwordが空の時" do
+        @user.password = ""
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password can't be blank")
       end
 
       it "passwordあってもでもpassword_confirmationがない時" do
+        @user.password_confirmation = ""
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password confirmation doesn't match Password")
       end
 
       it "nameが7文字以上の時" do
+        @user.name = "abcdefg"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Name is too long (maximum is 6 characters)")
       end
       
       it "重複したemailの時" do
+        @user.save
+        another_user = FactoryBot.build(:user)
+        another_user.email = @user.email
+        another_user.valid?
+        expect(another_user.errors.full_messages).to include("Email has already been taken")
       end
       
       it "passwordが5文字以下の時" do
+        @user.password = "abcde"
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
       end
-      
-      it "" do
-      end
-      
-      it "" do
-      end
-      
-      it "" do
-      end
-      
     end
 
 
