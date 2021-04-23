@@ -59,3 +59,4 @@ gem 'mini_magick'
 gem 'devise'
 gem 'kaminari'
 gem 'jquery-rails'
+gem 'aws-sdk-s3', require: false
