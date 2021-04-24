@@ -1,9 +1,10 @@
-# README
+# 映画共有サイト
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby on Railsを用いた映画の共有やコメントをすることができる様なアプリケーションです。
 
-Things you may want to cover:
+このアプリケーションでは、ユーザーの新規登録、ログイン、映画情報の共有、その情報に対してのコメントを書くことができます。
+
+
 
 * Ruby version
 

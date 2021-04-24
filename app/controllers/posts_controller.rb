@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :show]
-  before_action :contributor_confirmation, only: [:edit, :destroy]
+  before_action :redirect_root, except: :index
 
   def index
     @post = Post.order("created_at DESC")
@@ -25,8 +25,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = Post.find(params[:id])
-    post.destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to root_path
   end
 
   def edit
@@ -48,8 +49,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-  def contributor_confirmation
-    redirect_to root_path unless current_user == @post.user
+  def redirect_root
+    redirect_to root_path unless user_signed_in?
   end
-
 end

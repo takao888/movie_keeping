@@ -20,7 +20,7 @@
         <% if user_signed_in? && current_user.id == @post.user_id %>
         <%# ログインしているかつ今ログインしているユーザーが投稿者だった場合 %>
           <%= link_to "編集", edit_post_path, class:"edi", method: :get %>
-          <%= link_to "削除", post_path, class:"dele", method: :delete %>
+          <%= link_to "削除", post_path(@post.id), class:"dele", method: :delete %>
         <% end %>
         <% unless current_user.id == @post.user_id %>
         <%# それ以外のログインしているユーザー %>
